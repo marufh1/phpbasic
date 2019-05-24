@@ -2,7 +2,7 @@
   session_start();
 
   include 'configdB.php';
-
+// insert data inro database opeartion
   if (isset($_POST['save'])) {
     $firstname = $_POST['fname'];
     $lastname = $_POST['lname'];
@@ -13,7 +13,6 @@
 
     $_SESSION['msg'] = "Insert data successfully done";
     $_SESSION['msg-type'] = "success";
-
 
      header("location:index.php");
     // echo "successfull";
