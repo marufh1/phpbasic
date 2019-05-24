@@ -9,9 +9,11 @@
 
   </head>
   <body>
+    <?php require_once 'process.php'; ?>
+
     <div class="container">
       <div class="row">
-          <form class="" action="" method="post">
+          <form class="" action="process.php" method="post">
             <div class="form-group">
               <label >First Name</label>
               <input type="text" class="form-control" name="fname" value="">
@@ -22,6 +24,12 @@
               <label>Passing Year</label>
               <input type="text" class="form-control" name="passingyear" value="">
             </div>
+            <?php if (isset($_SESSION['msg'])): ?>
+              <div class="alert alert-<?php echo $_SESSION['msg-type']; ?>">
+                <?php echo $_SESSION['msg']; ?>
+                <?php unset($_SESSION['msg']); ?>
+              </div>
+            <?php endif; ?>
             <div class="form-group">
               <button type="submit" class="btn btn-info" name="save">SAVE</button>
             </div>
